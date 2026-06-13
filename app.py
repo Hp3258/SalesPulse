@@ -915,7 +915,7 @@ elif "Department" in page:
     st.subheader("Department Summary Table")
     summary = df_orig.groupby('Department').agg(
         Total_Employees=('Risk Score', 'count'),
-        Avg_Risk_Score=('Risk Score', lambda x: f"{round(float(x.mean())*100, 1)}%"),,
+        Avg_Risk_Score=('Risk Score', lambda x: f"{round(float(x.mean())*100, 1)}%"),
         High_Risk_Count=('Risk Level', lambda x: (x == 'High').sum()),
         Actual_Attrition=('Attrition', lambda x: (x == 'Yes').sum())
     ).reset_index()
